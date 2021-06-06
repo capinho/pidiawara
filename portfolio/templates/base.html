@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pape Ibrahima Diawara - Freelance Python Django | Online resume</title>
+    <meta name="description" content="
+        Pape Ibrahima Diawara I am passionate about computer science, design et create products. I am mostly developping apps using Python and Django Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Pape Ibrahima Diawara - Python Django developper Freelance Python Django | Online resume">
+    <meta property="og:image" content="https://pierre-merlet.com/media/projects/portfolio.png">
+    <meta property="og:url" content="https://pidiawara.com/">
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="">
+</head>
+
+<body class="box-content relative font-mono">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class='z-50 fixed flex shadow-md w-full h-auto font-medium font-mono md:font-sans md:font-semibold tracking-tigher md:tracking-wide bg-white font-sans text-center text-xs md:text-base lg:text-lg'>
+        <a href='/' class='inline-block flex-auto py-4 hover:bg-blue-900 hover:text-white lg:ml-40'>ABOUT ME</a>
+        <a href="{% url 'experiences' %}" class='inline-block flex-auto py-4 hover:bg-blue-900 hover:text-white'>EXPERIENCES</a>
+        <a href="{% url 'education' %}" class='inline-block flex-auto py-4 hover:bg-blue-900 hover:text-white'>EDUCATION</a>
+        <a href="{% url 'projects' %}" class='inline-block flex-auto py-4 hover:bg-blue-900 hover:text-white'>PROJECTS</a>
+        <a href="{% url 'skills' %} " class='inline-block flex-auto py-4 hover:bg-blue-900 hover:text-white lg:mr-40'>SKILLS</a>
+    </nav>
+
+    <div class="bg-gray-200 h-max-full w-full py-16 md:py-24 px-8 md:px-32 lg:px-48">
+        <div id='arrow' class='hidden lg:block fixed bottom-20 bg-gray-800 text-white text-center rounded-full w-10 right-20 text-3xl font-extrabold animate-bounce'>↓</div>
+        {% block index %}
+        {% endblock %}
+
+        {% block experiences %}
+        {% endblock %}
+
+        {% block education %}
+        {% endblock %}
+
+        {% block projects %}
+        {% endblock %}
+
+        {% block skills %}
+        {% endblock %}
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            // window.alert(limit);
+
+            var scroll = window.scrollY;
+            if (scroll >= 0.8 * limit) {
+                document.getElementById('arrow').innerHTML = '';
+            } else {
+                document.getElementById('arrow').innerHTML = '↓';
+            }
+        }
+    </script>
+
+</body>
+
+<footer class='bg-gray-800 py-2'>
+    <p class='text-right px-8 text-xs md:text-base text-white'><span>Copyright <script>document.write(new Date().getFullYear());</script> by Pape Ibrahima diawara | All Rights Reserved</span></p>
+</footer>
+
+</html>
