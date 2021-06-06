@@ -161,3 +161,4 @@ S3DIRECT_REGION = 'us-east-2'
 
 #AWS_S3_ENDPOINT_URL: 'https://sts.us-east-2.amazonaws.com'
 AWS_S3_REGION_NAME = 'us-east-2'
+
